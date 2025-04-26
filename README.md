@@ -32,6 +32,7 @@ You might also need onnxruntime if not already installed:
 bash
 
 pip install onnxruntime
+
 🚀 How to Run
 Clone the repository (or navigate to the folder):
 
