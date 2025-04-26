@@ -1,47 +1,55 @@
+# 🔁 Deepfake Face Swapper using InsightFace
 
-# Deepfake Face Swapper (InsightFace)
+This project is a simple face-swapping tool powered by [InsightFace](https://github.com/deepinsight/insightface). It detects faces in two images and swaps the source face onto the target image.
 
-A simple face-swapping tool using [InsightFace](https://github.com/deepinsight/insightface).  
-Detects faces in a source and target image, then replaces the target face with the source.
+---
 
-## 🔧 Requirements
+## 📸 Example Use Case
 
-Install dependencies (also add these to your root `requirements.txt`):
+Swap a celebrity face onto another person's body, or just experiment with facial transformations using static images.
 
---bash
+---
+
+## 📁 Folder Structure
+
+deepfake_generator/ ├── generator.py # Main face-swapping script ├── sat.jpg # Source face image ├── target_face.png # Target image where face is swapped └── README.md # Project documentation
+
+yaml
+
+
+---
+
+## 📦 Requirements
+
+Make sure you have Python 3.8+ installed.
+
+Install the dependencies:
+
+```bash
 pip install insightface opencv-python
+You might also need onnxruntime if not already installed:
 
-
-📂 File Structure
 bash
 
-deepfake_generator/
-├── generator.py         # Face-swap script
-├── sat.jpg              # Sample source image
-├── target_face.png      # Sample target image
-└── README.md            # This file
+pip install onnxruntime
+🚀 How to Run
+Clone the repository (or navigate to the folder):
 
-
-🚀 Usage
-Place your source and target images in this folder (default names: sat.jpg, target_face.png).
+Make sure sat.jpg and target_face.png exist in the same folder.
 
 Run the script:
+
 bash
+
 python generator.py
+After successful execution, the output image will be displayed or saved (you can add saving logic if needed).
 
-The swapped result will be saved as deepfake_result.png in the same folder.
+⚠️ Notes
+This script uses the buffalo_l model from InsightFace which works well on CPU.
 
+Make sure both images contain clear, front-facing faces for the best result.
 
-🧠 Model
-Uses the buffalo_l model pack from InsightFace for face detection and embeddings.
+For custom images, replace sat.jpg and target_face.png with your own.
 
-CPU only (no GPU needed).
-
-
-
-✏️ Notes
-Best results with clear, frontal faces.
-
-If you rename your input images, update the filenames in generator.py.
-
-Enjoy your face-swap! 🚀
+📄 License
+This project is for educational and research purposes only. Use responsibly.
